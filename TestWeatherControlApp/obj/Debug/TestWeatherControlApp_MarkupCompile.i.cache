@@ -1,0 +1,20 @@
+﻿TestWeatherControlApp
+
+
+winexe
+C#
+.cs
+D:\Donald\WPF training\SourceTree\WeatherControl\TestWeatherControlApp\obj\Debug\
+TestWeatherControlApp
+none
+false
+DEBUG;TRACE
+D:\Donald\WPF training\SourceTree\WeatherControl\TestWeatherControlApp\App.xaml
+4282674513
+
+13813198221
+181031724890
+MainWindow.xaml;Pages\Page1_DefaultWeatherControl.xaml;Pages\Page2_DynamicLayoutUICustom.xaml;Themes\Generic.xaml;
+
+False
+

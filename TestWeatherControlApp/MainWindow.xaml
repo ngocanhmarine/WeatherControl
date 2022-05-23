@@ -1,0 +1,32 @@
+﻿<Window x:Class="TestWeatherControlApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWeatherControlApp"
+        xmlns:WeatherControl="clr-namespace:WeatherControl;assembly=WeatherControl"
+        mc:Ignorable="d"
+        Height="520" Width="1000"
+        Title="MainWindow" >
+    <DockPanel>
+        <Frame NavigationUIVisibility="Hidden" DockPanel.Dock="Top" Margin="0,-1,0,1" Height="450" Name="spl1"/>
+        <Grid DockPanel.Dock="Bottom" Width="800" Height="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Button BorderThickness="1" BorderBrush="Black" Grid.Column="0" Name="page1" Content="Page 1" Click="page1_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100"/>
+            <TextBlock Grid.Column="1" Width="40" HorizontalAlignment="Center" Text=" " />
+            <Button BorderThickness="1" BorderBrush="Black" Grid.Column="2" Name="page2" Content="Page 2" Click="page2_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100"/>
+            <TextBlock Grid.Column="3" Width="40" HorizontalAlignment="Center" Text=" " />
+            <Button BorderThickness="1" BorderBrush="Black" Grid.Column="4" Name="page3" Content="Page 3" Click="page3_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100"/>
+            <TextBlock Grid.Column="5" Width="40" HorizontalAlignment="Center" Text=" " />
+            <Button BorderThickness="1" BorderBrush="Black" Grid.Column="6" Name="page4" Content="Page 4" Click="page4_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100"/>
+        </Grid>
+    </DockPanel>
+</Window>

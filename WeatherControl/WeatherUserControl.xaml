@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="WeatherControl.WeatherUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converter="clr-namespace:WeatherControl.Converter"
+             xmlns:local="clr-namespace:WeatherControl"
+             mc:Ignorable="d" 
+             Background="LightSkyBlue"
+             d:DesignHeight="300" d:DesignWidth="1000">
+    <!--<UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourcesDictionary\English.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>-->
+    <DockPanel LastChildFill="False" Width="1000">
+        <DockPanel DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="{DynamicResource keyFile}" Name="menuFile">
+                    <MenuItem Header="{DynamicResource keyExit}" Name="menuExit" Click="menuExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource keyLanguage}" Name="languageChoice">
+                    <MenuItem Header="{DynamicResource keyEnglish}" Name="English" Tag="en-US" Click="Language_Click" IsChecked="True"/>
+                    <MenuItem Header="{DynamicResource keyVietnamese}" Name="Vietnamese" Click="Language_Click" Tag="vi-VN"/>
+                </MenuItem>
+            </Menu>
+            <Image DockPanel.Dock="Top" Name="iconImg" Width="50" Height="50" />
+        </DockPanel>
+        <TextBox Height="50" DockPanel.Dock="Top" Name="txtCities" Text="Hanoi"/>
+
+        <WrapPanel Height="200" DockPanel.Dock="Top" Name="wplWeatherInfos" Width="Auto">
+            <ListView Name="lvWeather" >
+                <ListView.Resources>
+                    <converter:TempUnitConverter x:Key="tempUnitConverter"></converter:TempUnitConverter>
+                    
+                </ListView.Resources>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+                            <Grid Margin="5" Background="LightSlateGray">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{DynamicResource keyDescription}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource keyPressure}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{DynamicResource keyHumidity}"/>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{DynamicResource keyTempMax}"/>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{DynamicResource keyTempMin}"/>
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{DynamicResource keyVisibility}"/>
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="{DynamicResource keyWindSpeed}"/>
+                                <TextBlock Grid.Row="8" Grid.Column="0" Text="{DynamicResource keyWindDegree}"/>
+
+                                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="30" Text="{Binding city,Mode=TwoWay,BindsDirectlyToSource=True}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding description,Mode=TwoWay,BindsDirectlyToSource=True}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding pressure,Mode=TwoWay,BindsDirectlyToSource=True}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding humidity,Mode=TwoWay,BindsDirectlyToSource=True}"/>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding temp_max,Mode=TwoWay,BindsDirectlyToSource=True}" MouseUp="TempConverter_MouseEnter"/>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding temp_min,Mode=TwoWay,BindsDirectlyToSource=True}" MouseUp="TempConverter_MouseEnter"/>
+                                <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding visibility,Mode=TwoWay,BindsDirectlyToSource=True}"/>
+                                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding wind_speed,Mode=TwoWay,BindsDirectlyToSource=True}"/>
+                                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding wind_deg,Mode=TwoWay,BindsDirectlyToSource=True}"/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="2" Name="pressureUnit" Text="hPa"/>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Name="humidityUnit" Text="%"/>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Name="tempMaxUnit" Text="{Binding isCelcius, Converter={StaticResource tempUnitConverter}}"/>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Name="tempMinUnit" Text="{Binding isCelcius, Converter={StaticResource tempUnitConverter}}"/>
+                                <TextBlock Grid.Row="6" Grid.Column="2" Text=""/>
+                                <TextBlock Grid.Row="7" Grid.Column="2" Name="windSpeedUnit" Text="km/h"/>
+                                <TextBlock Grid.Row="8" Grid.Column="2" Name="windDegUnit" Text="&#176;"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </WrapPanel>
+
+        <Grid Margin="10" DockPanel.Dock="Bottom" Name="wplButtons">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Width="Auto" Name="btnAdd" Click="Add_Click">Add</Button>
+            <Button Grid.Column="1" Width="Auto" Name="btnEdit" Click="btnEdit_Click">Edit</Button>
+            <Button Grid.Column="2" Width="Auto" Name="btnDelete" Click="btnDelete_Click">Remove</Button>
+            <Button Grid.Column="3" Width="Auto" Name="btnClear" Click="btnClear_Click">Clear</Button>
+        </Grid>
+    </DockPanel>
+</UserControl>

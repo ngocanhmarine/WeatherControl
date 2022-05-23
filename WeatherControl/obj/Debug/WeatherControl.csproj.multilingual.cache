@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ArrayOfCacheFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CacheFile>
+    <FileName>Properties\Resources.resx</FileName>
+    <Checksum>203219190140411679425752062471271772725444</Checksum>
+    <ModifiedTime>2019-12-10T16:53:44.1644618</ModifiedTime>
+    <CacheFileType>NeutralResource</CacheFileType>
+    <WarningMessage />
+  </CacheFile>
+  <CacheFile>
+    <FileName>MultilingualResources\WeatherControl.ko-KR.xlf</FileName>
+    <Checksum>971554618282444013214467671161754113911</Checksum>
+    <ModifiedTime>2019-12-10T16:54:39.58212+07:00</ModifiedTime>
+    <CacheFileType>XliffResource</CacheFileType>
+    <WarningMessage />
+  </CacheFile>
+  <CacheFile>
+    <FileName>Properties\Resources.ko-KR.resx</FileName>
+    <Checksum>4814722626132112255812924113042815524333</Checksum>
+    <ModifiedTime>2019-12-10T16:56:04.6683032+07:00</ModifiedTime>
+    <CacheFileType>LanguageResource</CacheFileType>
+    <WarningMessage />
+  </CacheFile>
+  <CacheFile>
+    <FileName>MultilingualResources\WeatherControl.co.xlf</FileName>
+    <Checksum>1954719522617928981672432511749722521722</Checksum>
+    <ModifiedTime>2019-12-10T16:56:04.5895145+07:00</ModifiedTime>
+    <CacheFileType>XliffResource</CacheFileType>
+    <WarningMessage />
+  </CacheFile>
+  <CacheFile>
+    <FileName>Properties\Resources.co.resx</FileName>
+    <Checksum>19525178173832441949178108532091416317160</Checksum>
+    <ModifiedTime>2019-12-10T16:56:04.6623195+07:00</ModifiedTime>
+    <CacheFileType>LanguageResource</CacheFileType>
+    <WarningMessage />
+  </CacheFile>
+</ArrayOfCacheFile>

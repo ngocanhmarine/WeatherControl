@@ -1,0 +1,26 @@
+﻿<Page x:Class="TestWeatherControlApp.Pages.Page4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestWeatherControlApp.Pages"
+      xmlns:wc="clr-namespace:WeatherControl.Control2;assembly=WeatherControl"
+      xmlns:DataCall="clr-namespace:TestWeatherControlApp.DataCall"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1064.462"
+      Title="Page4">
+
+    <StackPanel>
+        <TextBox Name="tb1" Text="Hanoi" Width="300" KeyUp="tb1_KeyUp" Margin="20" />
+        <StackPanel Orientation="Horizontal" Margin="20" Width="300" >
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="20"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button Name="btnAdd" Click="btnAdd_Click" Width="100" Height="30" Content="Add"/>
+            <Button Name="btnClear" Click="btnClear_Click" Width="100" Height="30" Content="Clear"/>
+        </StackPanel>
+        <wc:CustomWeatherControl Name="cWC" GetWeatherDataMethod="{x:Static DataCall:APIHelper.GetWeatherDataMethod}" HorizontalAlignment="Left" />
+    </StackPanel>
+</Page>

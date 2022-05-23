@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+    <s:String x:Key="keyLanguage">Ngôn ngữ</s:String>
+    <s:String x:Key="keyEnglish">Tiếng Anh</s:String>
+    <s:String x:Key="keyVietnamese">Tiếng Việt</s:String>
+    <s:String x:Key="keyFile">Tài liệu</s:String>
+    <s:String x:Key="keyExit">Thoát</s:String>
+    
+    <s:String x:Key="keyDescription">Mô tả:</s:String>
+    <s:String x:Key="keyPressure">Áp suất:</s:String>
+    <s:String x:Key="keyHumidity">Độ ẩm:</s:String>
+    <s:String x:Key="keyTempMin">Nhiệt độ nhỏ nhất:</s:String>
+    <s:String x:Key="keyTempMax">Nhiệt độ lớn nhất:</s:String>
+    <s:String x:Key="keyVisibility">Tầm nhìn:</s:String>
+    <s:String x:Key="keyWindSpeed">Tốc độ gió:</s:String>
+    <s:String x:Key="keyWindDegree">Góc gió:</s:String>
+    <s:String x:Key="keyAQI">AQI:</s:String>
+</ResourceDictionary>
